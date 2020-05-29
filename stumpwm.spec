@@ -1,24 +1,29 @@
 Name: stumpwm
-BuildArch: noarch
-Version: 19.10.1
+Version: 19.11
 Release: 1%{?dist}
 License: GPLv2
 Summary: A tiling window manager written in Common Lisp
 Source0: https://github.com/stumpwm/stumpwm/archive/19.11.tar.gz
-Source1: ./19.11.tar.gz
 BuildRequires: sbcl
+BuildRequires: texinfo
 Requires: sbcl
 
 %description
 A tiling window manager written in Common Lisp
 
+%global debug_package %{nil}
+
 %prep
 %autosetup -n %{name}-%{version} -p 1
+./autogen.sh
+./configure --prefix=%{buildroot}/usr/
+
 %build
 make
 
 %install
-make install
+mkdir -p %{buildroot}%{_bindir}/%{name}
+install -m 755 %{name} %{buildroot}%{_bindir}/%{name}
 
 %files
-/usr/bin/stumpwm
+%{_bindir}/stumpwm
