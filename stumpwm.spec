@@ -7,6 +7,7 @@ Source0: https://github.com/%{name}/%{name}/archive/%{version}.tar.gz
 BuildRequires: sbcl
 BuildRequires: texinfo
 BuildRequires: autoconf
+BuildRequires: wget
 Requires: sbcl
 
 %description
