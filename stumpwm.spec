@@ -20,7 +20,8 @@ A tiling window manager written in Common Lisp
 ./autogen.sh
 ./configure --prefix=%{buildroot}/usr/
 wget https://beta.quicklisp.org/quicklisp.lisp
-sbcl --load quicklisp.lisp --eval '(progn (quicklisp-quickstart:install) (ql:add-to-init-file))'
+sbcl --load quicklisp.lisp --eval '(quicklisp-quickstart:install)'
+sbcl --load quicklisp.lisp --eval '(ql:add-to-init-file)'
 
 sbcl --eval '(ql:quickload "alexandria")'
 sbcl --eval '(ql:quickload "cl-ppcre")'
