@@ -1,6 +1,6 @@
 Name: stumpwm
 Version: 19.11
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPLv2
 Summary: A tiling window manager written in Common Lisp
 Source: https://github.com/%{name}/%{name}/archive/%{version}.tar.gz
