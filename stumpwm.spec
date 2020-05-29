@@ -22,8 +22,20 @@ A tiling window manager written in Common Lisp
 make
 
 %install
-mkdir -p %{buildroot}%{_bindir}/%{name}
-install -m 755 %{name} %{buildroot}%{_bindir}/%{name}
+make install
+
+find %{buildroot} > /tmp/stumpwm.find
+
+rm %{buildroot}%{_infodir}/dir
+
+%post
+/sbin/install-info %{_infodir}/%{name}.info.gz %{_infodir}/dir || :
+
+%prerun
+if [ $1 = 0 ]; then
+	/sbin/install-info --delete %{_infodir}/%{name}.info.gz %{_infodir}/dir || :
+fi
 
 %files
 %{_bindir}/stumpwm
+%{_infodir}/stumpwm.info.gz
