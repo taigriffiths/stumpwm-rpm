@@ -1,6 +1,6 @@
 Name: stumpwm
-Arch: noarch
-Version: 19.12
+BuildArch: noarch
+Version: 19.13
 Release: 1%{?dist}
 License: GPLv2
 Summary: A tiling window manager written in Common Lisp
