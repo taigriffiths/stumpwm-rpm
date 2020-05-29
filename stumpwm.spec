@@ -3,9 +3,10 @@ Version: 19.11
 Release: 2%{?dist}
 License: GPLv2
 Summary: A tiling window manager written in Common Lisp
-Source: https://github.com/%{name}/%{name}/archive/%{version}.tar.gz
+Source0: https://github.com/%{name}/%{name}/archive/%{version}.tar.gz
 BuildRequires: sbcl
 BuildRequires: texinfo
+BuildRequires: autoconf
 Requires: sbcl
 
 %description
